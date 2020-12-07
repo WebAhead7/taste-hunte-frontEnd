@@ -1,17 +1,26 @@
-import { Route } from "react-router-dom";
-const Enter = require("./Screens/Enter/enter");
-const HomePage = require("./Screens/HomePage/homePage");
-const Dishes = require("./Screens/Dishes/dishes");
-const Cookers = require("./Screens/Cookers/cookers");
+import {
+  BrowserRouter as Routers,
+  Router,
+  Route,
+  Switch,
+} from "react-router-dom";
+import Enter from "./Screens/Enter/enter";
+import HomePage from "./Screens/HomePage/homePage";
+import Dishes from "./Screens/Dishes/dishes";
+import Cookers from "./Screens/Cookers/cookers";
+import CookerProfile from "./Screens/CookerProfile/cookerProfile";
 
 function App() {
   return (
     <div>
       <div>LOGO</div>
-      <Route path="/" component={Enter} />
-      <Route path="/homePage" component={HomePage} />
-      <Route path="/dishes" component={Dishes} />
-      <Route path="/cookers" component={Cookers} />
+      <Switch>
+        <Route exact path="/" component={Enter} />
+        <Route path="/homePage/:role" component={HomePage} />
+        <Route path="/dishes" component={Dishes} />
+        <Route path="/cookers" component={Cookers} />
+        <Route path="/cookerProfile" component={CookerProfile} />
+      </Switch>
     </div>
   );
 }

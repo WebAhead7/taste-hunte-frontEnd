@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-const { BrowserRouter } = require("react-router-dom");
+// const { BrowserRouter } = require("react-router-dom");
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <BrowserRouter>
