@@ -1,3 +1,5 @@
+import SignIn from "../../Components/sign-in";
+
 export default function Enter() {
-  return <h1>ENTER</h1>;
+  return <SignIn />;
 }
