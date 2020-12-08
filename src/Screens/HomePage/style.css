@@ -1,9 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
+
 .container {
   border: solid black;
-  width: 50%;
+  width: 40%;
   margin: auto;
+  font-family: "Nerko One", cursive;
+  font-size: 25px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .component {
   border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  padding: 10px 0px;
+}
+
+.component:hover {
+  cursor: pointer;
+}
+
+.last:hover {
+  cursor: pointer;
+}
+
+.last {
+  /* border-bottom: 1px solid black; */
+  display: flex;
+  justify-content: space-around;
+  /* margin-bottom: 10px; */
+  padding: 10px 0px;
+}
+
+.icons {
+  width: 50px;
 }

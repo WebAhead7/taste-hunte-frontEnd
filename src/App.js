@@ -3,6 +3,7 @@ import {
   Router,
   Route,
   Switch,
+  useHistory,
 } from "react-router-dom";
 import Enter from "./Screens/Enter/enter";
 import HomePage from "./Screens/HomePage/homePage";
