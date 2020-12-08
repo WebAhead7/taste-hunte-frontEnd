@@ -1,0 +1,9 @@
+.container {
+  border: solid black;
+  width: 50%;
+  margin: auto;
+}
+
+.component {
+  border-bottom: 1px solid black;
+}

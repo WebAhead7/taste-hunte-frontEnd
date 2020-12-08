@@ -1,3 +1,15 @@
+import { useParams } from "react-router-dom";
+import "./style.css";
+
 export default function HomePage() {
-  return <h1>Home Page</h1>;
+  const { role } = useParams();
+  console.log(role);
+
+  return (
+    <div>
+      {role == "cooker" ? <div className="component">Profile</div> : null}
+      <div className="component">Dishes</div>
+      <div>Cookers</div>
+    </div>
+  );
 }

@@ -12,7 +12,7 @@ import CookerProfile from "./Screens/CookerProfile/cookerProfile";
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <div>LOGO</div>
       <Switch>
         <Route exact path="/" component={Enter} />
