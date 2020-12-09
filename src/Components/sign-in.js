@@ -1,10 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import doFetch from "../utils/getData";
 
 export default function SignIn(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [userRole, setUserRole] = useState("cooker");
   const [serverMessage, setServerMessage] = useState("");
+
+  const histroy = useHistory();
 
   const handleInput = (event) => {
     setServerMessage("");
@@ -12,6 +16,10 @@ export default function SignIn(props) {
     const val = event.target.value;
     if (name === "email") setEmail(val);
     else setPassword(val);
+  };
+
+  const handleRole = (event) => {
+    setUserRole(event.target.value);
   };
 
   const handleSignIn = (event) => {
@@ -50,6 +58,24 @@ export default function SignIn(props) {
         onChange={handleInput}
         required
       />
+      <label>
+        cooker
+        <input
+          type="radio"
+          value="cooker"
+          checked={userRole === "cooker"}
+          onChange={handleRole}
+        />
+      </label>
+      <label>
+        user
+        <input
+          type="radio"
+          value="user"
+          checked={userRole === "user"}
+          onChange={handleRole}
+        />
+      </label>
       <button type="submit">Sign In</button>
       <p id="sever-message">{serverMessage}</p>
       <p>
