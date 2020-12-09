@@ -7,6 +7,7 @@ export default function SignIn(props) {
   const [serverMessage, setServerMessage] = useState("");
 
   const handleInput = (event) => {
+    setServerMessage("");
     const name = event.target.name;
     const val = event.target.value;
     if (name === "email") setEmail(val);
@@ -28,6 +29,7 @@ export default function SignIn(props) {
         // redirect using useHistory hook...
         return;
       }
+      setServerMessage(data.message);
       console.log(data.message);
     });
   };
@@ -39,14 +41,17 @@ export default function SignIn(props) {
         placeholder="Email"
         name="email"
         onChange={handleInput}
+        required
       />
       <input
         type="password"
         placeholder="Password"
         name="password"
         onChange={handleInput}
+        required
       />
       <button type="submit">Sign In</button>
+      <p id="sever-message">{serverMessage}</p>
       <p>
         {"Sign up as "}
         <a href="" id="user" onClick={props.handleSignUp}>
@@ -57,7 +62,6 @@ export default function SignIn(props) {
           Cooker
         </a>
       </p>
-      <p id="sever-message"></p>
     </form>
   );
 }
