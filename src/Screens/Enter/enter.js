@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function Enter() {
   const [displaySignUp, setDisplaySignUp] = useState(false);
   const [role, setRole] = useState("cooker");
+
   const handleSignUp = (event) => {
     event.preventDefault();
     setRole(event.target.id);
@@ -13,7 +14,7 @@ export default function Enter() {
   return (
     <div>
       {displaySignUp ? (
-        <Signup role={role} />
+        <Signup role={role} hideSignUp={setDisplaySignUp} />
       ) : (
         <SignIn handleSignUp={handleSignUp} />
       )}
