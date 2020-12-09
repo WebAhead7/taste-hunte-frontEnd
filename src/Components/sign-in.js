@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import doFetch from "../utils/getData";
+import { server_url, apiKey, accessToken } from "../utils/constants";
 
 export default function SignIn(props) {
   const [email, setEmail] = useState("");
@@ -8,7 +9,7 @@ export default function SignIn(props) {
   const [userRole, setUserRole] = useState("cooker");
   const [serverMessage, setServerMessage] = useState("");
 
-  const histroy = useHistory();
+  const history = useHistory();
 
   const handleInput = (event) => {
     setServerMessage("");
@@ -24,7 +25,7 @@ export default function SignIn(props) {
 
   const handleSignIn = (event) => {
     event.preventDefault();
-    const url = "https://taste-hunter.herokuapp.com/cookers/login";
+    const url = `${server_url}${userRole}s/login`;
     doFetch(
       url,
       "POST",
@@ -35,6 +36,7 @@ export default function SignIn(props) {
         window.localStorage.setItem(accessToken, data[accessToken]);
         window.localStorage.setItem(apiKey, data[apiKey]);
         // redirect using useHistory hook...
+        history.push(`/homePage/${userRole}`);
         return;
       }
       setServerMessage(data.message);
