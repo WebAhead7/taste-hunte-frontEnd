@@ -3,6 +3,7 @@ import {
   Router,
   Route,
   Switch,
+  useHistory,
 } from "react-router-dom";
 import Enter from "./Screens/Enter/enter";
 import HomePage from "./Screens/HomePage/homePage";
@@ -12,7 +13,7 @@ import CookerProfile from "./Screens/CookerProfile/cookerProfile";
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <div>LOGO</div>
       <Switch>
         <Route exact path="/" component={Enter} />
