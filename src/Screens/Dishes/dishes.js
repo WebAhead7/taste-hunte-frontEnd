@@ -3,9 +3,6 @@ import { useParams } from 'react-router-dom';
 import apiKey from '../../utils/constants'
 //   const history = useHistory();
 
-  // const params = useParams();
-  // const id = params.id;
-
 
 const heroku = "https://taste-hunter.herokuapp.com/dishes"
 const heroku_api_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiJ1c2VyMkBleGFtcGxlLmNvbSIsImlhdCI6MTYwNzQ1MzkzNn0.hJK2SbWMTB_jdAjUvDLox985qwLA8jr7ujck2ugYFn0"
@@ -17,15 +14,10 @@ export default function Dishes(loginData) {
   const [dishes,setDishes] = React.useState(null);
 
   React.useEffect(() => {
+    // const token = window.localStorage.getItem('access_token')
+    // if (token){}
   fetch(`${heroku}/api_key=${token}`)
   
-  // , {
-  //   method: "GET",
-  //   body: JSON.stringify(loginData),
-  //   headers: { "content-type": "application/json" },
-  //   // headers: { authorization: `Bearer ${token}` },
-  // })
-
   .then((res) => {
     if (!res.ok) {
       const error = new Error("HTTP error");
@@ -35,17 +27,19 @@ export default function Dishes(loginData) {
       return  res.json() ;
   })
     .then( (data) => {
-      console.log(data);
+      // console.log(data);
+      const state = () => {setDishes((dishes) => dishes = data)}
+      console.log(state());
    })
+  //  .catch(error).console.log(error);
       }, []);
+
       return(
         <div>
-          {/* <h2>{mydata.cooker_id}</h2>
-          <h2>{mydata.name}</h2>
-          <h2>{mydata.description}</h2>
-        <h2>{mydata.price}</h2>
-        <h2>{mydata.category}</h2> */}
-        Dishes 
+          {/* <h2>{dishes.name}</h2>
+          <h2>{dishes.description}</h2>
+          <h2>{dishes.price}</h2>
+          <h2>{dishes.category}</h2> */}
         </div>
          )
 }

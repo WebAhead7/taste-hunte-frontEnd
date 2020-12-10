@@ -1,8 +1,8 @@
 import React from 'react';
 
 // local_dishes  = "http://localhost:4000/dishes"
-local_cookers = "http://localhost:4000/cookers"
-token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiaWF0IjoxNjA3NTIwNTk5LCJleHAiOjE2MDc1Mjc3OTl9.ncHzVmMHHbiILa1UcFplYOukWGGuQunBqXJuMI2sSEs"
+const local_cookers = "http://localhost:4000/cookers"
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiaWF0IjoxNjA3NTIwNTk5LCJleHAiOjE2MDc1Mjc3OTl9.ncHzVmMHHbiILa1UcFplYOukWGGuQunBqXJuMI2sSEs"
 
 function Cookers(loginData) { //get authorization: "access_token"
 const [cookers,setCookers] = React.useState(null);
