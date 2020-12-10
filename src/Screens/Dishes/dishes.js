@@ -42,6 +42,7 @@ export default function Dishes(loginData) {
       <p>{dishes_2.description}</p>
       <h2>{dishes_2.price}</h2>
       <h2>{dishes_2.category}</h2>
+      <button>back to home page</button>
     </div>
   );
 }

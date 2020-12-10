@@ -46,6 +46,7 @@ function Cookers(loginData) {
       <h2>{allCookers.name}</h2>
       <h2>{allCookers.email}</h2>
       <h2>{allCookers.work_address}</h2>
+      <button>back to home page</button>
     </div>
   );
 }
