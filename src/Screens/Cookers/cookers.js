@@ -39,16 +39,14 @@ function Cookers(loginData) {
   if (!cookers) {
     return "loading";
   }
-  const allCookers = cookers[0];
-  return (
+
+  return cookers.map((item) => (
     <div>
-      Cookers
-      <h2>{allCookers.name}</h2>
-      <h2>{allCookers.email}</h2>
-      <h2>{allCookers.work_address}</h2>
-      <button>back to home page</button>
+      <h2>{item.name}</h2>
+      <h2>{item.email}</h2>
+      <h2>{item.work_address}</h2>
     </div>
-  );
+  ));
 }
 
 export default Cookers;
