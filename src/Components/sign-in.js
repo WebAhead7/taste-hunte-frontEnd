@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import doFetch from "../utils/getData";
-import { server_url, apiKey, accessToken } from "../utils/constants";
+import {
+  server_url,
+  apiKey,
+  accessToken,
+  roleString,
+  userDetails,
+} from "../utils/constants";
 
 export default function SignIn(props) {
   const [email, setEmail] = useState("");
@@ -33,8 +39,10 @@ export default function SignIn(props) {
       JSON.stringify({ email, password })
     ).then((data) => {
       if (!data.message) {
+        window.localStorage.setItem(userDetails, JSON.stringify(data));
         window.localStorage.setItem(accessToken, data[accessToken]);
         window.localStorage.setItem(apiKey, data[apiKey]);
+        window.localStorage.setItem(roleString, userRole);
         // redirect using useHistory hook...
         history.push(`/homePage/${userRole}`);
         return;
