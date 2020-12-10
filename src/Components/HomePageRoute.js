@@ -1,4 +1,4 @@
-export function HomePageRoute(props) {
+export default function HomePageRoute(props) {
   return (
     <div className={props.containerStyle} onClick={props.handleClick}>
       <img

@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import "./style.css";
 import { useHistory } from "react-router-dom";
+import HomePageRoute from "../../Components/HomePageRoute";
 
 export default function HomePage() {
   const { role } = useParams();
@@ -19,23 +20,28 @@ export default function HomePage() {
   return (
     <div>
       {role == "cooker" ? (
-        <div className="component" onClick={profileClick}>
-          <img src="../../img/user.png" alt="profile" className="icons"></img>
-          Profile
-        </div>
+        <HomePageRoute
+          containerStyle="component"
+          handleClick={profileClick}
+          imageSrc="../../img/user.png"
+          title="Profile"
+          iconStyle="icons"
+        />
       ) : null}
-      <div className="component" onClick={dishesClick}>
-        <img
-          src="../../img/food-serving.png"
-          alt="dishes"
-          className="icons"
-        ></img>
-        Dishes
-      </div>
-      <div className="last" onClick={cookersClick}>
-        <img src="../../img/chef.png" alt="cooker" className="icons"></img>
-        Cookers
-      </div>
+      <HomePageRoute
+        containerStyle="component"
+        handleClick={dishesClick}
+        imageSrc="../../img/food-serving.png"
+        title="Dishes"
+        iconStyle="icons"
+      />
+      <HomePageRoute
+        containerStyle="last"
+        handleClick={cookersClick}
+        imageSrc="../../img/chef.png"
+        title="Cookers"
+        iconStyle="icons"
+      />
     </div>
   );
 }
