@@ -33,10 +33,21 @@ function Cookers(loginData) {
       })
       .then((data) => {
         console.log(data);
+        setCookers(data);
       });
   }, []);
-
-  return <div>Cookers</div>;
+  if (!cookers) {
+    return "loading";
+  }
+  const allCookers = cookers[0];
+  return (
+    <div>
+      Cookers
+      <h2>{allCookers.name}</h2>
+      <h2>{allCookers.email}</h2>
+      <h2>{allCookers.work_address}</h2>
+    </div>
+  );
 }
 
 export default Cookers;
