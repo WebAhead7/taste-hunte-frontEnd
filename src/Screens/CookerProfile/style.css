@@ -1,0 +1,9 @@
+.profile-img {
+  max-width: 150px;
+  max-height: 150px;
+}
+.info-section {
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+}
